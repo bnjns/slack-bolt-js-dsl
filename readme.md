@@ -50,7 +50,7 @@ TODO.
 
 ### Prerequisites
 
-- Node.js 19.x
+- Node.js (18.x or later)
 - Yarn 1.x
 
 ### Installing
