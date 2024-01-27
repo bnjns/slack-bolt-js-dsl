@@ -12,6 +12,7 @@ import {
   VideoBlock,
 } from '../blocks'
 import { build, Builder } from '../builder'
+import type { AbstractConstructor } from '../types'
 
 export function withBlocks<T extends AbstractConstructor>(Base: T) {
   abstract class WithBlocks extends Base {

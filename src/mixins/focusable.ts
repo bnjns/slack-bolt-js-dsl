@@ -1,4 +1,4 @@
-import type { Focusable } from '../types'
+import type { AbstractConstructor, Focusable } from '../types'
 
 export function focusable<T extends AbstractConstructor>(Base: T): AbstractConstructor<Focusable> & T {
   abstract class FocusableClass extends Base implements Focusable {

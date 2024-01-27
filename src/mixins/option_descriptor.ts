@@ -1,5 +1,6 @@
 import type { PlainTextElement } from '@slack/bolt'
 import { plainText } from '../elements'
+import type { AbstractConstructor } from '../types'
 
 export function optionDescriptor<T extends AbstractConstructor>(Base: T) {
   abstract class OptionDescriptor extends Base {

@@ -1,4 +1,4 @@
-import type { IsBlock } from '../types'
+import type { AbstractConstructor, IsBlock } from '../types'
 
 export function isBlock<T extends AbstractConstructor>(Base: T): AbstractConstructor<IsBlock> & T {
   abstract class IsBlockClass extends Base implements IsBlock {

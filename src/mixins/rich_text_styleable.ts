@@ -1,4 +1,4 @@
-import type { RichTextStyle, RichTextStyleable } from '../types'
+import type { AbstractConstructor, RichTextStyle, RichTextStyleable } from '../types'
 
 export function richTextStyleable<T extends AbstractConstructor>(Base: T): AbstractConstructor<RichTextStyleable> & T {
   abstract class RichTextStyleableClass extends Base implements RichTextStyleable {

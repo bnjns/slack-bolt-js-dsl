@@ -1,6 +1,7 @@
 import type { RichTextElement } from '@slack/bolt'
 import { RichTextColor, RichTextDate, RichTextEmoji, RichTextLink, RichTextMention, RichTextText } from '../elements'
 import { build } from '../builder'
+import type { AbstractConstructor } from '../types'
 
 export function withRichTextElements<T extends AbstractConstructor>(Base: T) {
   abstract class WithRichTextElements extends Base {

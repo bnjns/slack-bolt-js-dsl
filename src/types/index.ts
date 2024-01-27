@@ -1,4 +1,5 @@
 export * from './blocks'
+export * from './constructor'
 export * from './elements'
 export * from './inputs'
 export * from './mixins'

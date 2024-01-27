@@ -1,5 +1,5 @@
 import type { DispatchActionConfig } from '@slack/bolt'
-import type { Dispatchable } from '../types'
+import type { AbstractConstructor, Dispatchable } from '../types'
 
 export function dispatchable<T extends AbstractConstructor>(Base: T): AbstractConstructor<Dispatchable> & T {
   abstract class DispatchableClass extends Base implements Dispatchable {

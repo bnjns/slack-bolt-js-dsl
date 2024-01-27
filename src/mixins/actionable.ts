@@ -1,4 +1,4 @@
-import type { Actionable } from '../types'
+import type { AbstractConstructor, Actionable } from '../types'
 
 export function actionable<T extends AbstractConstructor>(Base: T): AbstractConstructor<Actionable> & T {
   abstract class ActionableClass extends Base implements Actionable {
