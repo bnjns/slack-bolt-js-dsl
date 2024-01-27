@@ -21,6 +21,11 @@ export interface Focusable {
   focusOnLoad(focusOnLoad: boolean): this
 }
 
+export interface IsBlock {
+  _blockId?: string
+  blockId(blockId: string): this
+}
+
 export interface Placeholderable {
   _placeholder?: PlainTextElement
   placeholder(text: string, emoji?: boolean): this
