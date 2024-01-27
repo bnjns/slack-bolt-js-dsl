@@ -6,6 +6,16 @@
   "files": [
     "dist/**/*"
   ],
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./elements": {
+      "types": "./dist/elements/index.d.ts",
+      "default": "./dist/elements/index.js"
+    }
+  },
   "repository": "https://github.com/bnjns/slack-bolt-js-dsl",
   "author": "Ben Jones",
   "license": "Apache-2.0",
