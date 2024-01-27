@@ -9,11 +9,16 @@ on:
 jobs:
   typing:
     runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        node-version:
+          - 18
+          - 20
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 19
+          node-version: ${{ matrix.node-version }}
       - run: yarn install --frozen-lockfile
       - run: yarn check:types
 
@@ -23,7 +28,7 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 19
+          node-version: 20
       - run: yarn install --frozen-lockfile
       - run: yarn check:lint
 
@@ -33,6 +38,6 @@ jobs:
       - uses: actions/checkout@v4
       - uses: actions/setup-node@v4
         with:
-          node-version: 19
+          node-version: 20
       - run: yarn install --frozen-lockfile
       - run: yarn test

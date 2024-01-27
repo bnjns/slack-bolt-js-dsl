@@ -46,6 +46,9 @@
   "dependencies": {
     "@slack/bolt": "^3.17.1"
   },
+  "engines": {
+    "node": "^18.0.0 || ^20.0.0"
+  },
   "scripts": {
     "build": "rm -rf dist && tsc",
     "check:lint": "eslint . --ext .ts",
