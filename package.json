@@ -14,6 +14,10 @@
     "./elements": {
       "types": "./dist/elements/index.d.ts",
       "default": "./dist/elements/index.js"
+    },
+    "./inputs": {
+      "types": "./dist/inputs/index.d.ts",
+      "default": "./dist/inputs/index.js"
     }
   },
   "repository": "https://github.com/bnjns/slack-bolt-js-dsl",

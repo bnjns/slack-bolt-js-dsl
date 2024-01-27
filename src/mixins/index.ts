@@ -1,3 +1,8 @@
+export { actionable } from './actionable'
+export { confirmable } from './confirmable'
+export { dispatchable } from './dispatchable'
+export { focusable } from './focusable'
 export { optionDescriptor } from './option_descriptor'
+export { placeholderable } from './placeholderable'
 export { richTextStyleable } from './rich_text_styleable'
 export { withRichTextElements } from './with_rich_text_elements'
