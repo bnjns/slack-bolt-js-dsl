@@ -1,5 +1,6 @@
 {
   "name": "@bnjns/slack-bolt-dsl",
+  "description": "A DSL-like package that allows you to fluently build blocks to use with Slack's Bolt JS SDK.",
   "version": "0.0.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
@@ -28,7 +29,7 @@
       "default": "./dist/views/index.js"
     }
   },
-  "repository": "https://github.com/bnjns/slack-bolt-js-dsl",
+  "repository": "bnjns/slack-bolt-js-dsl",
   "author": "Ben Jones",
   "license": "Apache-2.0",
   "devDependencies": {
@@ -52,6 +53,7 @@
   },
   "scripts": {
     "build": "rm -rf dist && tsc",
+    "check:all": "yarn check:lint && yarn check:types && yarn test",
     "check:lint": "eslint . --ext .ts",
     "check:types": "tsc --noEmit",
     "test": "jest",

@@ -1,0 +1,64 @@
+name: Release
+
+on:
+  push:
+    tags:
+      - 'v[0-9]+.[0-9]+.[0-9]+*'
+
+permissions:
+  contents: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+          persist-credentials: false
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          registry-url: https://registry.npmjs.org
+      - uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+      - run: pip install semver
+      - name: Build the package
+        run: |
+          yarn install --frozen-lockfile
+          yarn check:all
+          yarn build
+      - name: Configure the version
+        run: |
+          yarn version \
+            --new-version ${GITHUB_REF_NAME:1} \
+            --no-git-tag-version
+      - name: Publish to NPM
+        run: |
+          npm publish \
+            --access public \
+            --provenance
+        env:
+          NODE_AUTH_TOKEN: ${{ secrets.NPM_TOKEN }}
+      - name: Create the release
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          args="--generate-notes --verify-tag"
+          is_prerelease=$(python -c "import semver; print(semver.Version.parse('${GITHUB_REF_NAME:1}').prerelease is not None)")
+          if [ "$is_prerelease" != "False" ]; then args="$args --prerelease"; fi
+          gh release create $GITHUB_REF_NAME $args
+      - name: Commit the updated package.json
+        run: |
+          git config user.email '41898282+github-actions[bot]@users.noreply.github.com'
+          git config user.name 'github-actions[bot]'
+          git add package.json
+          git commit -m "[no ci] bump version to ${GITHUB_REF_NAME:1}"
+      - name: Push changes
+        uses: ad-m/github-push-action@master
+        with:
+          github_token: ${{ secrets.RELEASE_GITHUB_TOKEN }}
+          branch: main
