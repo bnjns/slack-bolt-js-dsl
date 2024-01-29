@@ -1,7 +1,7 @@
 {
   "name": "@bnjns/slack-bolt-dsl",
   "description": "A DSL-like package that allows you to fluently build blocks to use with Slack's Bolt JS SDK.",
-  "version": "0.0.1",
+  "version": "0.1.0-alpha.1",
   "main": "./dist/index.js",
   "types": "./dist/index.d.ts",
   "files": [
