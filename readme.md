@@ -3,7 +3,9 @@
 ### Slack Bolt JS DSL
 
 ![GitHub License](https://img.shields.io/github/license/bnjns/slack-bolt-js-dsl?style=flat-square)
-![NPM Version](https://img.shields.io/npm/v/%40bnjns%2Fslack-bolt-js-dsl?style=flat-square)
+![NPM Version](https://img.shields.io/npm/v/%40bnjns%2Fslack-bolt-dsl?style=flat-square)
+![node-current](https://img.shields.io/node/v/%40bnjns%2Fslack-bolt-dsl?style=flat-square)
+![GitHub package.json dev/peer/optional dependency version](https://img.shields.io/github/package-json/dependency-version/bnjns/slack-bolt-js-dsl/peer/%40slack%2Fbolt?style=flat-square)
 ![GitHub issues](https://img.shields.io/github/issues/bnjns/slack-bolt-js-dsl?style=flat-square)
 
 ---
