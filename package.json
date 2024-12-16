@@ -39,7 +39,7 @@
   "author": "Ben Jones",
   "license": "Apache-2.0",
   "devDependencies": {
-    "@slack/bolt": "^3.17.1",
+    "@slack/bolt": "^4.1.1",
     "@stylistic/eslint-plugin": "^2.1.0",
     "@types/jest": "^29.5.11",
     "@types/node": "^22.0.0",
@@ -52,7 +52,7 @@
     "typescript": "^5.3.3"
   },
   "peerDependencies": {
-    "@slack/bolt": "^3.17.1"
+    "@slack/bolt": "^4.1.1"
   },
   "engines": {
     "node": ">=18.0.0"
